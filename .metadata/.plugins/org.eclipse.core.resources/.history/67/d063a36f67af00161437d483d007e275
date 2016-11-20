@@ -33,17 +33,16 @@ public class FracCalc {
     public static String produceAnswer(String input)
     { 
         // TODO: Implement this function to produce the solution to the input
-    	System.out.println(input);
     	String[] splitEquation = input.split(" ");
-       // System.out.println(splitEquation[0]);
+        System.out.println(splitEquation[0]);
         String operand1 = splitEquation[0];
         String operator = splitEquation[1];
         String operand2 = splitEquation[2];
-      //  String[] operand1Composition = operandSplitter(operand1);
-      //  String[] operand2Composition = operandSplitter(operand2);
-    //    if (operand1Composition[3].equals("0") || operand2Composition[3].equals("0")){
-      //  	return("Do not enter an equation where a denominator is 0");
-     //   } 
+        String[] operand1Composition = operandSplitter(operand1);
+        String[] operand2Composition = operandSplitter(operand2);
+        if (operand1Composition[3].equals("0") || operand2Composition[3].equals("0")){
+        	return("Do not enter an equation where a denominator is 0");
+        } 
         
         return (operand2);
     }

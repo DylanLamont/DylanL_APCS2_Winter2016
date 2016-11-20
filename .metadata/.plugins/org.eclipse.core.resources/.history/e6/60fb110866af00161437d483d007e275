@@ -4,19 +4,7 @@ public class FracCalc {
 
     public static void main(String[] args) 
     {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Hello and welcome to the fraction calculator, please enter your equation");
-        String equation = input.next();
-        if (!equation.equals("quit")){
-        	produceAnswer(equation);
-        	while (!equation.equals("quit")){
-                System.out.println("Please enter your equation.");
-                equation = input.next();
-                produceAnswer(equation);
-        	}
-        }
-    	
-    	// TODO: Read the input from the user and call produceAnswer with an equation
+        // TODO: Read the input from the user and call produceAnswer with an equation
 
     }
     
@@ -31,9 +19,7 @@ public class FracCalc {
     public static String produceAnswer(String input)
     { 
         // TODO: Implement this function to produce the solution to the input
-        String[] splitEquation = input.split();
-        String operand1 = splitEquation[0];
-        String operator = splitEquation[1];
+        
         return "";
     }
 
