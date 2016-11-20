@@ -1,4 +1,6 @@
 package fracCalc;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class FracCalc {
 
@@ -6,13 +8,13 @@ public class FracCalc {
     {
         Scanner input = new Scanner(System.in);
         System.out.println("Hello and welcome to the fraction calculator, please enter your equation");
-        String equation = input.next();
+        String equation = input.nextLine();
         if (!equation.equals("quit")){
-        	produceAnswer(equation);
+        	System.out.println(produceAnswer(equation));
         	while (!equation.equals("quit")){
                 System.out.println("Please enter your equation.");
                 equation = input.next();
-                produceAnswer(equation);
+                System.out.println(produceAnswer(equation));
         	}
         }
     	
@@ -31,10 +33,29 @@ public class FracCalc {
     public static String produceAnswer(String input)
     { 
         // TODO: Implement this function to produce the solution to the input
-        String[] splitEquation = input.split();
+    	System.out.println(input);
+    	String[] splitEquation = input.split(" ");
+        System.out.println(splitEquation[0]);
         String operand1 = splitEquation[0];
         String operator = splitEquation[1];
-        return "";
+        String operand2 = splitEquation[2];
+        String[] operand1Composition = operandSplitter(operand1);
+        String[] operand2Composition = operandSplitter(operand2);
+        if (operand1Composition[3].equals("0") || operand2Composition[3].equals("0")){
+        	return("Do not enter an equation where a denominator is 0");
+        } 
+        
+        return (operand2);
+    }
+    
+    public static String[] operandSplitter (String inputOperand){
+    	String[] numberArr = new String[3];
+    	String[] wholeNumSplit = inputOperand.split(" ");
+    	String[] fractionSplit = wholeNumSplit[1].split("/");
+    	numberArr[0] = wholeNumSplit[0];
+    	numberArr[1] = fractionSplit[0];
+    	numberArr[2] = fractionSplit[1];
+    	return (numberArr);
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
